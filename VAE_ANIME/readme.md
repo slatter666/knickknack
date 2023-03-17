@@ -1,0 +1,49 @@
+## Variational Auto Encoder for Generating Anime face
+
+#### 1. Introduction
+- Here we will train a VAE to generate anime face 
+- The dataset can be download from [kaggle anime face dataset](https://www.kaggle.com/datasets/splcher/animefacedataset), download the dataset to `dataset` directory and put all the images under directory `anime/raw/images`, when you finish, the dataset looks like this:
+```text
+dataset
+├── anime
+│   └── raw
+│   │   └── images
+│   │       ├── 46651_2014.jpg
+│   │       ├── 4665_2003.jpg
+│   │       ├── ...
+```
+- Then we have to process this raw images, simple run the code `python preprocess.py`, then your directory looks like this:
+```text
+dataset
+├── anime
+│   ├── processed
+│   │   └── images
+│   │       ├── 46651_2014.jpg
+│   │       ├── 4665_2003.jpg
+│   │       ├── ...
+│   └── raw
+│   │   └── images
+│   │       ├── 46651_2014.jpg
+│   │       ├── 4665_2003.jpg
+│   │       ├── ...
+```
+
+#### 2. Load dataset, Build model, Train model
+- After we finish all the code(of course you can check the code carefully), let's begin training
+- Here I just use a NVIDIA GeForce RTX 3090 to train, each epoch will cost about 11 seconds
+- If you want to train from scratch, you don't have to modify any thing. If you finish training and want to generate anime picture, modify `mode`, simply run program and wait your generated anime face
+```shell
+python run.py
+```
+- Of course, you can modify the model architecture or try some other hyper parameters, do anything you want
+
+#### 3. Check the quality of generated image
+- First of all, we will use random Gaussian Noise to sample some images, here are 256 examples
+
+![sample anime faces](gen/sample.png)
+
+- Then we can see the reconstruct anime faces
+
+![](gen/reconstruct.png)
+
+- I think the quality is ok but not that amazing, you can see if deepening the network works better
