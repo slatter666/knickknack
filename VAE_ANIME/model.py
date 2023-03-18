@@ -44,7 +44,7 @@ class AnimeVAE(pl.LightningModule):
             nn.Conv2d(c_hid * 8, c_hid * 16, kernel_size=3, stride=2, padding=1, bias=False)
         )
 
-        self.latent = (c_hid * 16, 2, 2)
+        self.latent = [c_hid * 16, 2, 2]
 
         self.decoder = nn.Sequential(
             # (c_hid * 16, 2, 2) -> (c_hid * 8, 4, 4)
@@ -74,24 +74,23 @@ class AnimeVAE(pl.LightningModule):
         )
 
         self.criterion1 = nn.BCELoss(reduction='sum')
-        self.criterion2 = nn.KLDivLoss(reduction='sum')
 
         self.lr = lr
 
     def encode(self, x):
         """
         encoding, return mean and variance
-        :param x: (batch, 3, 64, 64)
-        :return mean: (batch, 128, 8, 8)  log_var: (batch, 128, 8, 8)
+        :param x: (batch, channel_in, 64, 64)
+        :return mean: (batch, c_hid * 16, 2, 2)  log_var: (batch, c_hid * 16, 2, 2)
         """
-        enc_out = self.encoder(x)  # (batch, 64, 16, 16)
+        enc_out = self.encoder(x)  # (batch, c_hid * 8, 4, 4)
         return self.mean(enc_out), self.var(enc_out)
 
     def reparameterize(self, mu, log_var):
         """
-        :param mu: (batch, 128, 8, 8)
-        :param log_var: (batch, 128, 8, 8)
-        :return: latent vector: (batch, 128, 8, 8)
+        :param mu: (batch, c_hid * 16, 2, 2)
+        :param log_var: (batch, c_hid * 16, 2, 2)
+        :return: latent vector: (batch, c_hid * 16, 2, 2)
         """
         std = torch.exp(log_var / 2)
         eps = torch.randn_like(std)
@@ -100,16 +99,16 @@ class AnimeVAE(pl.LightningModule):
     def decode(self, z):
         """
         decoding, return generated image
-        :param z: (batch, 128, 8, 8)
-        :return out: (batch, 3, 64, 64)
+        :param z: (batch, c_hid * 16, 2, 2)
+        :return out: (batch, channel_in, 64, 64)
         """
         out = self.decoder(z)
         return out
 
     def forward(self, x):
         """
-        :param x: (batch, image_size)
-        :return: generated x: (batch, image_size)
+        :param x: (batch, channel_in, 64, 64)
+        :return: generated x: (batch, channel_in, 64, 64)
         """
         mu, log_var = self.encode(x)
         z = self.reparameterize(mu, log_var)
@@ -125,7 +124,6 @@ class AnimeVAE(pl.LightningModule):
 
         x_reconst, mu, log_var = self.forward(x)
         reconst_loss = self.criterion1(x_reconst, x)
-        # kl_loss = self.criterion2()
         kl_div = - 0.5 * torch.sum(1 + log_var - mu.pow(2) - log_var.exp())
         train_loss = reconst_loss + kl_div
         self.log('reconstruct loss', reconst_loss)

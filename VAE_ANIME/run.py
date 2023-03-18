@@ -39,7 +39,6 @@ def train():
     checkpoint_path = os.path.join(save_dir, f'lr={lr}-batch={batch_size}')
     checkpoint_callback = ModelCheckpoint(
         dirpath=checkpoint_path,
-        # save_top_k=-1,
         save_weights_only=True,
         save_last=True
     )
@@ -50,10 +49,13 @@ def train():
     trainer.fit(model, train_loader)
 
 
-def predict(ck_path):
-    z = torch.randn(256, 1024, 2, 2).to(torch.device('cuda'))
+def sample(ck_path):
     model = AnimeVAE.load_from_checkpoint(ck_path).to(torch.device('cuda'))
     model.eval()
+
+    size = model.latent
+    size.insert(0, 256)   # sample 256 anime faces
+    z = torch.randn(size).to(torch.device('cuda'))
 
     out = model.decode(z)
     out = make_grid(out, nrow=16)
@@ -82,5 +84,5 @@ if __name__ == '__main__':
     else:
         # set your ckpt here
         ck_path = 'checkpoints/lr=0.001-batch=128/last.ckpt'
-        predict(ck_path)
+        sample(ck_path)
         reconstruct(ck_path)
