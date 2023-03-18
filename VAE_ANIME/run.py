@@ -84,6 +84,7 @@ if __name__ == '__main__':
     else:
         # set your ckpt here
         ck_path = 'checkpoints/lr=0.001-batch=128/last.ckpt'
-        os.system('mkdir gen')
+        if not os.path.exists('./gen'):   # create a directory 'gen' to store generated image
+            os.system('mkdir gen')
         sample(ck_path)
         reconstruct(ck_path)
