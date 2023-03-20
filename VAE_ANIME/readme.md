@@ -47,3 +47,8 @@ python run.py
 ![](gen/reconstruct.png)
 
 - I think the quality is ok but not that amazing, you can see if deepening the network works better
+
+#### 4. Some references
+- [Tutorial on Variational Autoencoders(English)](https://arxiv.org/pdf/1606.05908.pdf)
+- [Tutorial on Variational Autoencoders(Chinese)](https://zhuanlan.zhihu.com/p/348498294)
+- [During training, it's reasonable that reconstruct loss decrease, but why KL divergence increase](https://www.cnblogs.com/BlueBlueSea/p/13149464.html)
