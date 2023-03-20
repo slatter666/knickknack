@@ -21,7 +21,7 @@ dataset
 #### 2. Load dataset, Build model, Train model
 - For this task, we just build a easy model which only contains fully connected layer, no convolutions
 - Here I use a NVIDIA GeForce RTX 3090 to train, each epoch will cost about 3 seconds
-- If you want to train from scratch, you don't have to modify any thing. If you finish training and want to generate anime picture, modify `mode`, simply run program and wait for your generated numbers
+- If you want to train from scratch, you don't have to modify any thing. If you finish training and want to generate number picture, modify `mode`, simply run program and wait for your generated numbers
 ```shell
 python run.py
 ```
