@@ -1,11 +1,11 @@
 ## Conditional Variational Auto Encoder for Generating Handwriting Numbers
 
 #### 1. Introduction
-- In the previous [VAE_MINIST](../VAE_MINIST) we can generate handwriting numbers randomly, for this project we wanna generate numbers conditionally(for example we wanna generate 7, then generated pictures should contain number 7). We will train a CVAE to do this
+- In the previous [VAE_MINIST](../VAE_MNIST) we can generate handwriting numbers randomly, for this project we wanna generate numbers conditionally(for example we wanna generate 7, then generated pictures should contain number 7). We will train a CVAE to do this
 - The dataset is MINIST, it will be download under the folder `dataset` using torchvision, the dataset folder structure looks like this:
 ```text
 dataset
-├── minist
+├── mnist
 │   └── MNIST
 │   │   └── raw
 │   │       ├── t10k-images-idx3-ubyte

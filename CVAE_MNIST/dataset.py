@@ -14,7 +14,7 @@ class Loader:
         self.workers = workers
 
     def get_loader(self):
-        dataset = datasets.MNIST(root='../dataset/minist', train=True, transform=transforms.ToTensor(), download=True)
+        dataset = datasets.MNIST(root='../dataset/mnist', train=True, transform=transforms.ToTensor(), download=True)
         print(f'Total samples: {len(dataset)}')
 
         loader = DataLoader(dataset, batch_size=self.bsz, shuffle=True, num_workers=self.workers)

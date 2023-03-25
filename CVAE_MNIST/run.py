@@ -90,7 +90,7 @@ def reconstruct(ck_path):
 
 if __name__ == '__main__':
     # if you want to sample, please change the mode to 'test'
-    mode = 'test'
+    mode = 'train'
     if mode == 'train':
         train()
     else:
