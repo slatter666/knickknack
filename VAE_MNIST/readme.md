@@ -5,7 +5,7 @@
 - The dataset is MINIST, it will be download under the folder `dataset` using torchvision, the dataset folder structure looks like this:
 ```text
 dataset
-├── minist
+├── mnist
 │   └── MNIST
 │   │   └── raw
 │   │       ├── t10k-images-idx3-ubyte
