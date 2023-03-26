@@ -29,6 +29,10 @@ python run.py
 - Of course, you can modify the model architecture or try some other hyper parameters, do anything you want 
 
 #### 3. Check the quality of generated image
+- I train it for 200 epochs and the training process is shown below, blue curve for generator loss, red curve for discriminator loss
+
+![training process](train_process.png)
+
 - You can check the model generation effect using tensorboard, we save it every 20 epochs
 - Here we will use random Gaussian Noise to sample some images, here are 256 examples
 
