@@ -8,6 +8,7 @@ There are mainly four kinds of projects, all of them are written using pytorch l
 - [use CVAE to generate handwriting numbers conditionally](CVAE_MNIST)
 - [use VAE to generate anime faces](VAE_ANIME)
 - [use GAN to generate handwriting numbers](GAN_MNIST)
+- [use CGAN to generate handwriting numbers conditionally](CGAN_MNIST)
 - [use DCGAN to generate anime faces](GAN_ANIME)
 
 ### 2. Generating Text
