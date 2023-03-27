@@ -150,6 +150,7 @@ class MNISTGAN(pl.LightningModule):
 
         if not self.test_to_device:
             self.test_noise = self.test_noise.type_as(x)
+            self.test_to_device = True
 
         # train generator
         if optimizer_idx == 0:
