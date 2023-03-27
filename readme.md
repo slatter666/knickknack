@@ -8,6 +8,7 @@ There are mainly four kinds of projects, I'll keep updating
 - [use CVAE to generate handwriting numbers conditionally](CVAE_MNIST)
 - [use VAE to generate anime faces](VAE_ANIME)
 - [use GAN to generate handwriting numbers](GAN_MNIST)
+- [use DCGAN to generate anime faces](GAN_ANIME)
 
 ### 2. Generating Text
 
