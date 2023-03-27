@@ -1,7 +1,7 @@
 ## AIGC Knickknack
 Here I will create some interesting AIGC projects, each directory contains a project. If you like it, please give me a star, thanks
 
-There are mainly four kinds of projects, I'll keep updating
+There are mainly four kinds of projects, all of them are written using pytorch lightning, I'll keep updating
 
 ### 1. Generating Image
 - [use VAE to generate handwriting numbers](VAE_MNIST)
