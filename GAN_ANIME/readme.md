@@ -48,6 +48,7 @@ python run.py
 ![sample anime faces](gen/sample.png)
 
 - I think the quality is good cause the total parameters of our generator is only 6.3M. The architecture used here is not exactly the same as the original DCGAN which is larger, you can try that architecture
+- Compare to [VAE](../VAE_ANIME), GAN produces sharper lines while VAE produces slightly blurred images, this is a advantage of GAN
 
 #### 4. Some references
 - [Generative Adversarial Nets](https://arxiv.org/pdf/1406.2661.pdf)
