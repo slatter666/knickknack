@@ -36,7 +36,7 @@ python run.py
 - You can check the model generation effect using tensorboard, we save it every 20 epochs
 - Here we will use random Gaussian Noise to sample some images, here are 256 examples
 
-![sample anime faces](gen/sample.png)
+![sample numbers](gen/sample.png)
 
 - I think the quality is good because we just use such a simple model, but the time cost is a little bit high
 

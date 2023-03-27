@@ -31,7 +31,7 @@ python run.py
 - Note that I also try to add label information only in decoder, but the effect is not good as adding to both encoder and decoder, I guess it's just because supervision is stronger
 - First of all, we will use random Gaussian Noise and label information(for line i, we put label i, i from 0 to 9) to sample some images, here are 200 examples
 
-![sample anime faces](gen/sample.png)
+![sample numbers](gen/sample.png)
 
 - Then we can see the reconstruct numbers
 

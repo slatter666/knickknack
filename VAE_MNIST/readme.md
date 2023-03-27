@@ -30,7 +30,7 @@ python run.py
 #### 3. Check the quality of generated image
 - First of all, we will use random Gaussian Noise to sample some images, here are 256 examples
 
-![sample anime faces](gen/sample.png)
+![sample numbers](gen/sample.png)
 
 - Then we can see the reconstruct numbers
 
