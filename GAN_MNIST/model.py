@@ -136,7 +136,7 @@ class MNISTGAN(pl.LightningModule):
 
         # fake images
         z = torch.randn(batch_size, self.latent_dim).type_as(x)
-        fake_imgs = self(z)
+        fake_imgs = self(z).detach()
         d_output = torch.squeeze(self.discriminator(fake_imgs))
         loss_fake = self.criterion(d_output, fake_label)
 
