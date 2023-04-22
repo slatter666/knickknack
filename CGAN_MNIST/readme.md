@@ -2,7 +2,7 @@
 
 #### 1. Introduction
 - In the previous [GAN_MINIST](../GAN_MNIST) we can generate handwriting numbers randomly, for this project we wanna generate numbers conditionally(for example we wanna generate 7, then generated pictures should contain number 7). We will train a CGAN to do this
-- The dataset is MNIST, it will be download under the folder `dataset` using torchvision, the dataset folder structure looks like this:
+- The dataset is MNIST, it will be downloaded under the folder `dataset` using torchvision, the dataset folder structure looks like this:
 ```text
 dataset
 ├── mnist

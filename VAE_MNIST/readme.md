@@ -2,7 +2,7 @@
 
 #### 1. Introduction
 - Here we will train a VAE to generate handwriting number 
-- The dataset is MNIST, it will be download under the folder `dataset` using torchvision, the dataset folder structure looks like this:
+- The dataset is MNIST, it will be downloaded under the folder `dataset` using torchvision, the dataset folder structure looks like this:
 ```text
 dataset
 ├── mnist
