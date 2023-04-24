@@ -21,11 +21,11 @@ dataset
 #### 2. Load dataset, Build model, Train model
 - We don't have to modify too much, only part of the model and input should be modified, see the code to check this
 - Here I use a NVIDIA GeForce RTX 3090 to train, each epoch will cost about 7 seconds
-- If you want to train from scratch, you don't have to modify any thing. If you finish training and want to generate number picture, modify `mode`, simply run program and wait for your generated numbers
+- If you want to train from scratch, you don't have to modify anything. If you finish training and want to generate number picture, modify `mode`, simply run program and wait for your generated numbers
 ```shell
 python run.py
 ```
-- Of course, you can modify the model architecture or try some other hyper parameters, do anything you want
+- Of course, you can modify the model architecture or try some other hyper-parameters, do anything you want
 
 #### 3. Check the quality of generated image
 - I train it for 200 epochs, we will use random Gaussian Noise and label information(for line i, we put label i, i from 0 to 9) to sample some images, here are 200 examples

@@ -21,11 +21,11 @@ dataset
 #### 2. Load dataset, Build model, Train model
 - We don't have to modify too much, only part of the model and input should be modified, watch the code to check this
 - Here I use a NVIDIA GeForce RTX 3090 to train, each epoch will cost about 3 seconds
-- If you want to train from scratch, you don't have to modify any thing. If you finish training and want to generate number picture, modify `mode`, simply run program and wait for your generated numbers
+- If you want to train from scratch, you don't have to modify anything. If you finish training and want to generate number picture, modify `mode`, simply run program and wait for your generated numbers
 ```shell
 python run.py
 ```
-- Of course, you can modify the model architecture or try some other hyper parameters, do anything you want
+- Of course, you can modify the model architecture or try some other hyper-parameters, do anything you want
 
 #### 3. Check the quality of generated image
 - Note that I also try to add label information only in decoder, but the effect is not good as adding to both encoder and decoder, I guess it's just because supervision is stronger

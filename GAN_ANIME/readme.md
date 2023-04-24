@@ -31,11 +31,11 @@ dataset
 #### 2. Load dataset, Build model, Train model
 - After we finish all of the code(of course you can check the code carefully), let's begin training
 - Here I just use a NVIDIA GeForce RTX 3090 to train, each epoch will cost about 30 seconds
-- If you want to train from scratch, you don't have to modify any thing. If you finish training and want to generate anime picture, modify `mode`, simply run program and wait for your generated anime faces
+- If you want to train from scratch, you don't have to modify anything. If you finish training and want to generate anime picture, modify `mode`, simply run program and wait for your generated anime faces
 ```shell
 python run.py
 ```
-- Of course, you can modify the model architecture or try some other hyper parameters, do anything you want
+- Of course, you can modify the model architecture or try some other hyper-parameters, do anything you want
 
 #### 3. Check the quality of generated image
 - I train the model for 200 epochs, you can train for more epochs and I guess the effect will be better

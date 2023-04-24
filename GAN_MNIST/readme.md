@@ -22,11 +22,11 @@ dataset
 - Make sure you have normalize the data, otherwise you'll find model doesn't converge, check `dataset.py`
 - For this task, we just build a easy model which only contains fully connected layer, no convolutions
 - Here I use a NVIDIA GeForce RTX 3090 to train, each epoch will cost about 7 seconds
-- If you want to train from scratch, you don't have to modify any thing. If you finish training and want to generate number picture, modify `mode`, simply run program and wait for your generated numbers
+- If you want to train from scratch, you don't have to modify anything. If you finish training and want to generate number picture, modify `mode`, simply run program and wait for your generated numbers
 ```shell
 python run.py
 ```
-- Of course, you can modify the model architecture or try some other hyper parameters, do anything you want 
+- Of course, you can modify the model architecture or try some other hyper-parameters, do anything you want 
 
 #### 3. Check the quality of generated image
 - I train it for 200 epochs and the training process is shown below, blue curve for generator loss, red curve for discriminator loss

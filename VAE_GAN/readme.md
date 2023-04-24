@@ -32,11 +32,11 @@ dataset
 - Since we have finished [VAE_ANIME](../VAE_ANIME) and [GAN_ANIME](../GAN_ANIME), it's much easier to do this task
 - We simply copy all the code from [GAN_ANIME](../GAN_ANIME), the only thing to modify here is model, see `model.py` to check how we build the model 
 - Here I just use a NVIDIA GeForce RTX 3090 to train, each epoch will cost about 45 seconds
-- If you want to train from scratch, you don't have to modify any thing. If you finish training and want to generate anime picture, modify `mode`, simply run program and wait for your generated anime faces
+- If you want to train from scratch, you don't have to modify anything. If you finish training and want to generate anime picture, modify `mode`, simply run program and wait for your generated anime faces
 ```shell
 python run.py
 ```
-- Of course, you can modify the model architecture or try some other hyper parameters, do anything you want
+- Of course, you can modify the model architecture or try some other hyper-parameters, do anything you want
 
 #### 3. Check the quality of generated image
 - I train the model for 200 epochs, you can reduce the number of epochs appropriately, the effect won't be too bad
