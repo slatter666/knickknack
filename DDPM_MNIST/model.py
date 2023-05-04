@@ -37,26 +37,6 @@ class PositionalEncoding(nn.Module):
         return self.pos_embedding[t]
 
 
-# class SinusoidalPositionEmbeddings(nn.Module):
-#     def __init__(self, dim):
-#         super().__init__()
-#         self.dim = dim
-#
-#     def forward(self, time):
-#         """
-#         time embedding
-#         :param time: (batch)
-#         :return: time embdding  (batch, dim)
-#         """
-#         device = time.device
-#         half_dim = self.dim // 2
-#         embeddings = math.log(10000) / (half_dim - 1)
-#         embeddings = torch.exp(torch.arange(half_dim, device=device) * -embeddings)
-#         embeddings = time[:, None] * embeddings[None, :]  # (batch, 1) * (1, half_dim) -> (batch, half_dim)
-#         embeddings = torch.cat((embeddings.sin(), embeddings.cos()), dim=-1)
-#         return embeddings
-
-
 class Block(nn.Module):
     def __init__(self, channel_in, channel_out, time_embed_dim, up=False):
         super(Block, self).__init__()
