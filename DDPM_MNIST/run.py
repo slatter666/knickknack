@@ -63,7 +63,9 @@ def sample(ck_path):
     size = (256, 1, 28, 28)
     z = torch.randn(size).to(device)
 
-    out = convert_image_to_natural(model.reverse_process(z, show_process=True, img_nums=6, process_nums=8, save_path=process_save_path))
+    # we show 15 diffusion process
+    out = convert_image_to_natural(
+        model.reverse_process(z, show_process=True, img_nums=6, process_nums=15, save_path=process_save_path))
     out = make_grid(out, nrow=16)
     save_image(out, image_save_path)
 
