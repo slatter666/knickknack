@@ -16,7 +16,7 @@ from utils import *
 
 
 class PositionalEncoding(nn.Module):
-    def __init__(self, num_steps: int, embed_dim: int, dropout: float = 0):
+    def __init__(self, num_steps: int, embed_dim: int):
         super(PositionalEncoding, self).__init__()
         self.embed_dim = embed_dim
         half_dim = embed_dim // 2
@@ -26,7 +26,6 @@ class PositionalEncoding(nn.Module):
         pos_embedding[:, 0::2] = torch.sin(pos * den)
         pos_embedding[:, 1::2] = torch.cos(pos * den)
 
-        self.dropout = nn.Dropout(dropout)
         self.register_buffer('pos_embedding', pos_embedding)
 
     def forward(self, t: torch.Tensor):
@@ -89,7 +88,7 @@ class SimpleUnet(nn.Module):
         self.up_channels = up_channels
         self.time_embed_dim = time_embed_dim
 
-        self.position_embedding = PositionalEncoding(num_steps, time_embed_dim, dropout=0.1)
+        self.position_embedding = PositionalEncoding(num_steps, time_embed_dim)
 
         # down sample
         self.downs = nn.ModuleList(
