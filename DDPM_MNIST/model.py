@@ -249,10 +249,10 @@ class DiffusionModel(pl.LightningModule):
                 if show_process and i % step_size == 0:
                     col = process_nums - i // step_size
                     images = cur_x[:img_nums].detach().cpu()  # (img_nums, h, w, c)
-                    for i in range(images.shape[0]):
-                        pos = i * process_nums + col
+                    for j in range(images.shape[0]):
+                        pos = j * process_nums + col
                         plt.subplot(img_nums, process_nums, pos)
-                        plt.imshow(tensor_image_to_PIL(images[i]), cmap='gray')
+                        plt.imshow(tensor_image_to_PIL(images[j]), cmap='gray')
 
         if show_process:
             plt.savefig(save_path)
