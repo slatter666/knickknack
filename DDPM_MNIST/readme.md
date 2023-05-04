@@ -36,7 +36,7 @@ python run.py
 ![sample numbers](gen/sample.png)
 
 - Then let's check the diffusion process, here we show first six diffusion process
-![diffusion process](gen/process.png)
+![whole diffusion process](gen/process.png)
 
 - I think the quality is pretty good and note that our model's parameters are only 2.3M(of course this model is more complex than a simple MLP)
 
