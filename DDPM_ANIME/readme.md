@@ -52,7 +52,7 @@ python run.py
 
 ![sample anime faces](gen/sample1.png)
 
-- Second, we set $\sigma_{t}^2 = \frac{1-\bar{\alpha}_{t-1}}{1-\bar{\alpha}_{t}} \beta_{t}$, below are 256 examples
+- Second, we set $$\sigma_{t}^2 = \frac{1-\bar{\alpha}_{t-1}}{1-\bar{\alpha}_{t}} \beta_{t}$$, below are 256 examples
 
 ![sample anime faces](gen/sample2.png)
 
