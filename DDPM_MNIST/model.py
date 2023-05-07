@@ -252,6 +252,7 @@ class DiffusionModel(pl.LightningModule):
                         pos = j * process_nums + col
                         plt.subplot(img_nums, process_nums, pos)
                         plt.imshow(tensor_image_to_PIL(images[j]), cmap='gray')
+                        plt.axis('off')
 
         if show_process:
             plt.savefig(save_path)
