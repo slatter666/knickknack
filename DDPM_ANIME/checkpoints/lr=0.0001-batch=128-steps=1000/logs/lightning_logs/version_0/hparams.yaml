@@ -1,0 +1,16 @@
+attn:
+- 2
+ch: 64
+ch_mult:
+- 1
+- 2
+- 4
+- 4
+dropout: 0.1
+image_size: !!python/tuple
+- 3
+- 64
+- 64
+lr: 0.0001
+num_res_blocks: 2
+num_steps: 1000

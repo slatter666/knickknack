@@ -38,7 +38,7 @@ attn = [1]  # only in 16 * 16 resolution we use attention
 This model takes up a lot of video memory
 - Note that this model cost lots of cuda memory(~20GB), if you use the cifar10 model setting, it will cost about 24GB cuda memory, make sure you have enough memory or you have to reduce batch size
 - Here I just use a NVIDIA GeForce RTX 3090 to train, each epoch will cost about 3min30s
-- If you want to train from scratch, you don't have to modify anything. If you finish training and want to generate anime picture, modify `mode`, simply run program and wait for your generated anime faces
+- If you want to train from scratch, you have to modify `mode` to `train`. If you finish training and want to generate anime picture, modify `mode` to `test`, simply run program and wait for your generated anime faces
 ```shell
 python run.py
 ```
@@ -46,7 +46,7 @@ python run.py
 
 #### 3. Check the quality of generated image
 - I train for 500 epochs, but I find the effect is pretty good even only train for 100 epochs(but it's less stable), so if you want to save time you can stop training after 100 epochs iteration
-- Because of the long training and some people will have insufficient resources, I have release the checkpoint so you don't have to train from scratch
+- Because of the long training and some people will have insufficient resources, I have release the checkpoint so you don't have to train from scratch, and you can also check the log
 - Then we will use random Gaussian Noise to sample images. In the DDPM paper, there are two posterior variance, so here we also test these two settings
 
 - First, we set $\sigma_{t}^2 = \beta_{t}$, below are 256 examples and six diffusion process using this posterior variance setting
