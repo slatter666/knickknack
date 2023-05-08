@@ -45,22 +45,31 @@ python run.py
 - Of course, you can modify the model architecture or try some other hyper-parameters, do anything you want
 
 #### 3. Check the quality of generated image
-- I train for 500 epochs, but I find the effect is pretty good even only train for 100 epochs, so if you want to save time you can stop training after 100 epochs iteration
+- I train for 500 epochs, but I find the effect is pretty good even only train for 100 epochs(but it's less stable), so if you want to save time you can stop training after 100 epochs iteration
+- Because of the long training and some people will have insufficient resources, I have release the checkpoint so you don't have to train from scratch
 - Then we will use random Gaussian Noise to sample images. In the DDPM paper, there are two posterior variance, so here we also test these two settings
 
-- First, we set $\sigma_{t}^2 = \beta_{t}$, below are 256 examples
+- First, we set $\sigma_{t}^2 = \beta_{t}$, below are 256 examples and six diffusion process using this posterior variance setting
 
-![sample anime faces](gen/sample1.png)
+![sample anime faces](gen/sample_0.png)
+![sample anime faces](gen/process_0.png)
 
-- Second, we set ![](https://latex.codecogs.com/svg.image?&space;\sigma_{t}^2&space;=&space;\frac{1&space;-&space;\bar{\alpha}_{t-1}}{1&space;-&space;\bar{\alpha}_{t}}&space;\beta_{t}), below are 256 examples
+- Second, we set ![](https://latex.codecogs.com/svg.image?&space;\sigma_{t}^2&space;=&space;\frac{1&space;-&space;\bar{\alpha}_{t-1}}{1&space;-&space;\bar{\alpha}_{t}}&space;\beta_{t}), below are 256 examples and six diffusion process using this posterior variance setting
 
-![sample anime faces](gen/sample2.png)
+![sample anime faces](gen/sample_1.png)
+![sample anime faces](gen/process_1.png)
 
-- Let's check the diffusion process, here we show first six diffusion process using first variance setting
-![sample anime faces](gen/process1.png)
+- I think the quality is pretty good compare to [VAE](../VAE_ANIME) and [GAN](../GAN_ANIME). This is not a fair comparison cause this diffusion model has 25.4M parameters which is larger, but this result is delighted.
+- Here I also do another experiment, I add noise to the original image(forward process), then use the noisy image to generate image to see whether it can recover the original image. For the forward process I set t equals to 100, 500, 1000 respectively, then denoise steps equals to 1000, below are the results
+![recover t=100](gen/recover_t=100.png)
+<center>forward process t=100, reverse process t=1000</center>
 
-- I think the quality is good cause the total parameters of our generator is only 6.3M. The architecture used here is not exactly the same as the original DCGAN which is larger, you can try that architecture
-- Compare to [VAE](../VAE_ANIME), GAN produces sharper lines while VAE produces slightly blurred images, this is a advantage of GAN
+![recover t=500](gen/recover_t=500.png)
+<center>forward process t=500, reverse process t=1000</center>
+
+![recover t=1000](gen/recover_t=1000.png)
+<center>forward process t=1000, reverse process t=1000</center>
+
 
 #### 4. Some references
 - [Deep Unsupervised Learning using Nonequilibrium Thermodynamics](https://arxiv.org/pdf/1503.03585.pdf)
