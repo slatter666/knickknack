@@ -60,7 +60,8 @@ python run.py
 ![sample anime faces](gen/process_1.png)
 
 - I think the quality is pretty good compare to [VAE](../VAE_ANIME) and [GAN](../GAN_ANIME). This is not a fair comparison cause this diffusion model has 25.4M parameters which is larger, but this result is delighted.
-- Here I also do another experiment, I add noise to the original image(forward process), then use the noisy image to generate image to see whether it can recover the original image. For the forward process I set t equals to 100, 500, 1000 respectively, then denoise steps equals to 1000, below are the results
+- Here I also do another experiment, I add noise to the original image(forward process), then use the noisy image to generate image to see whether it can recover the original image. For the forward process I set t equals to 100, 500, 1000 respectively, then denoise steps equals to 1000, below are the results(first column is original image, second column is noisy image which we add t steps' noise to original image, third column is generated image using first posterior variance, fourth column is generated image using second posterior variance)
+
 ![recover t=100](gen/recover_t=100.png)
 <center>forward process t=100, reverse process t=1000</center>
 
@@ -70,6 +71,7 @@ python run.py
 ![recover t=1000](gen/recover_t=1000.png)
 <center>forward process t=1000, reverse process t=1000</center>
 
+- We can see that the generated image is totally different to original image, even we just add 100 steps' noise. And here we can see that when forward process t is small, the generated image is blank(I don't know why, and I guess this observation can be a latent research direction)
 
 #### 4. Some references
 - [Deep Unsupervised Learning using Nonequilibrium Thermodynamics](https://arxiv.org/pdf/1503.03585.pdf)
