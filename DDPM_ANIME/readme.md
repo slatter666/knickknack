@@ -61,7 +61,7 @@ python run.py
 ![sample anime faces](gen/sample_1.png)
 ![sample anime faces](gen/process_1.png)
 
-- I think the quality is pretty good compare to [VAE](../VAE_ANIME) and [GAN](../GAN_ANIME). This is not a fair comparison cause this diffusion model has 25.4M parameters which is larger, but this result is delighted.
+- I think the quality is pretty good compare to [VAE](../VAE_ANIME) and [GAN](../GAN_ANIME). This is not a fair comparison cause this diffusion model has 25.4M parameters which is larger, but this result is delighted. I think the effect is similar whether using the first posterior variance or the second
 - Here I also do another experiment, I add noise to the original image(forward process), then use the noisy image to generate image to see whether it can recover the original image. For the forward process I set t equals to 100, 500, 1000 respectively, then denoise steps equals to 1000, below are the results(first column is original image, second column is noisy image which we add t steps' noise to original image, third column is generated image using first posterior variance, fourth column is generated image using second posterior variance)
 
 <center>forward process t=100, reverse process t=1000</center>
