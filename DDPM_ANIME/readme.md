@@ -54,7 +54,7 @@ python run.py
 ![sample anime faces](gen/sample_0.png)
 ![sample anime faces](gen/process_0.png)
 
-- Second, we set ![](https://latex.codecogs.com/svg.image?&space;\sigma_{t}^2&space;=&space;\frac{1&space;-&space;\bar{\alpha}_{t-1}}{1&space;-&space;\bar{\alpha}_{t}}&space;\beta_{t}), below are 256 examples and six diffusion process using this posterior variance setting
+- Second, we set $\sigma_{t}^2 = \frac{1-\bar{\alpha}_{t-1}}{1-\bar{\alpha}_{t}}\beta_{t}$, below are 256 examples and six diffusion process using this posterior variance setting
 
 ![sample anime faces](gen/sample_1.png)
 ![sample anime faces](gen/process_1.png)
