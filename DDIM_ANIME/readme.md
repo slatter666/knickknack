@@ -71,8 +71,8 @@ sh sample.sh
 
 ![recover t=100](gen/recover_t=100.png)
 
-- We can see generated image's quality are good using DDIM even for 10 steps, this is much faster than DDPM. And DDIM's generative processes is deterministic so the image's high-level feature remains the same which DDPMs are not. But for recover image, DDIM is not able to deal with that but I think the effect is better than DDPM
-- For more details, you can clone the program to local and run by yourself
+- We can see generated images' quality are good using DDIM even for 10 steps, which is much faster than DDPM. And DDIM's generative processes are deterministic so the image's high-level feature remains the same while DDPMs are not. But for recovering image, DDIM is not able to deal with that but I think the result is better than DDPM
+- For more details, you can clone the project to local and run by yourself
 
 #### 4. Some references
 - [Deep Unsupervised Learning using Nonequilibrium Thermodynamics](https://arxiv.org/pdf/1503.03585.pdf)
