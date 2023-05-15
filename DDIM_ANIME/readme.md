@@ -43,31 +43,31 @@ sh sample.sh
 
 ![sample anime faces step 10](gen/sample_steps=10_eta=0.0.png)
 
-<center>DDIM sample_steps=100</center>
+<div align=center>DDIM sample_steps=100</div>
 
 ![sample anime faces step 100](gen/sample_steps=100_eta=0.0.png)
 
-<center>DDIM sample_steps=1000</center>
+<div align=center>DDIM sample_steps=1000</div>
 
 ![sample anime faces step 1000](gen/sample_steps=1000_eta=0.0.png)
 
 - When we set $eta$ to other value, the results are as follows:
 
-<center>sample_steps=100, eta=0.2</center>
+<div align=center>sample_steps=100, eta=0.2</div>
 
 ![sample anime faces step 100](gen/sample_steps=100_eta=0.2.png)
 
-<center>sample_steps=100, eta=0.5</center>
+<div align=center>sample_steps=100, eta=0.5</div>
 
 ![sample anime faces step 100](gen/sample_steps=100_eta=0.5.png)
 
-<center>DDPM sample_steps=100, eta=1.0</center>
+<div align=center>DDPM sample_steps=100, eta=1.0</div>
 
 ![sample anime faces step 1000](gen/sample_steps=100_eta=1.0.png)
 
 - I also do another experiment, I add noise to the original image(forward process), then use the noisy image to generate image to see whether it can recover the original image. For the forward process and backward process I set t equals to 100, below are the results(first column is original image, second column is noisy image which we add t steps' noise to original image, third column is generated image using DDIM)
 
-<center>DDIM forward process t=100, reverse process t=100</center>
+<div align=center>DDIM forward process t=100, reverse process t=100</div>
 
 ![recover t=100](gen/recover_t=100.png)
 
