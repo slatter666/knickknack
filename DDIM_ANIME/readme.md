@@ -72,13 +72,11 @@ sh sample.sh
 ![recover t=100](gen/recover_t=100.png)
 
 - We can see generated image's quality are good using DDIM even for 10 steps, this is much faster than DDPM. And DDIM's generative processes is deterministic so the image's high-level feature remains the same which DDPMs are not. But for recover image, DDIM is not able to deal with that but I think the effect is better than DDPM
+- For more details, you can clone the program to local and run by yourself
 
 #### 4. Some references
 - [Deep Unsupervised Learning using Nonequilibrium Thermodynamics](https://arxiv.org/pdf/1503.03585.pdf)
 - [Denoising Diffusion Probabilistic Models](https://arxiv.org/pdf/2006.11239.pdf)
-- [Diffusion Models Tutorial(English Blog)](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/#forward-diffusion-process)
-- [Diffusion Models Tutorial(Chinese Blog)](https://zhuanlan.zhihu.com/p/525106459)
-- [Diffusion Models Tutorail(Chinese Video)](https://www.bilibili.com/video/BV1b541197HX)
-- [Diffusion Models implementation from scratch in PyTorch(English Videl)](https://www.youtube.com/watch?v=a4Yfz2FxXiY)
-- [Unofficial PyTorch implementation of Denoising Diffusion Probabilistic Models](https://github.com/w86763777/pytorch-ddpm)
+- [Denoising Diffusion Implicit Models](https://arxiv.org/pdf/2010.02502.pdf)
+- [DDIM Tutorail(Chinese Video)](https://www.bilibili.com/video/BV1JY4y1N7dn)
 - [OpenAI implementation of Improved Diffusion](https://github.com/openai/improved-diffusion/tree/main)
