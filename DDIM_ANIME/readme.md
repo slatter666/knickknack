@@ -67,8 +67,6 @@ sh sample.sh
 
 - I also do another experiment, I add noise to the original image(forward process), then use the noisy image to generate image to see whether it can recover the original image. For the forward process and backward process I set t equals to 100, below are the results(first column is original image, second column is noisy image which we add t steps' noise to original image, third column is generated image using DDIM)
 
-<div align=center>DDIM forward process t=100, reverse process t=100</div>
-
 ![recover t=100](gen/recover_t=100.png)
 
 - We can see generated images' quality are good using DDIM even for 10 steps, which is much faster than DDPM. And DDIM's generative processes are deterministic so the image's high-level feature remains the same while DDPMs are not. But for recovering image, DDIM is not able to deal with that but I think the result is better than DDPM
