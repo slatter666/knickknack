@@ -39,7 +39,7 @@ sh sample.sh
 #### 3. Check the quality of generated image
 - First, let's see the quality of generated image after 10, 100, 1000 steps sampling respectively
 
-<center>DDIM sample_steps=10</center>
+<div align=center>DDIM sample_steps=10</div>
 
 ![sample anime faces step 10](gen/sample_steps=10_eta=0.0.png)
 
