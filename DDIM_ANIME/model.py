@@ -42,7 +42,7 @@ class DiffusionModel(pl.LightningModule):
         self.posterior_variance = self.betas * (1. - self.alphas_cumprod_prev) / (
                     1. - self.alphas_cumprod)  # second posterior variance setting
 
-        # this will be used when we use DDIM generate process
+        # this will be used when we use LLAMA generate process
         self.time_step_sequence = None
 
         # used for test
@@ -145,7 +145,7 @@ class DiffusionModel(pl.LightningModule):
 
     def ddim_reverse_step(self, x_t, t, t_prev, eta):
         """
-        one DDIM reverse process step
+        one LLAMA reverse process step
         :param x_t: (batch, image_size)
         :param t: t moment  a scalar
         :param t_prev: previous t moment a scalar
@@ -177,10 +177,10 @@ class DiffusionModel(pl.LightningModule):
     def ddim_reverse_process(self, x_t, time_steps=100, eta=0.0, discr_method='linear', show_process=False, img_nums=1,
                              process_nums=10, save_path=None):
         """
-        full DDIM reverse process step
+        full LLAMA reverse process step
         :param x_t: random guassian noise   (batch, image_size)
         :param time_steps: reverse steps
-        :param eta: a hyper parameter in DDIM, it's original DDPM generative process when eta=1 and DDIM when eta=0
+        :param eta: a hyper parameter in LLAMA, it's original DDPM generative process when eta=1 and LLAMA when eta=0
         :param discr_method: reverse process sub-sequence selection: linear or quadratic
         :param show_process: show process or not
         :param show_nums: how many images to show in the diffusion process
@@ -193,7 +193,7 @@ class DiffusionModel(pl.LightningModule):
         elif discr_method == 'quadratic':
             time_step_seq = (torch.linspace(0, int(math.sqrt(self.num_steps - 2)), time_steps) ** 2).long()
         else:
-            raise NotImplementedError(f"There is no DDIM discretization method called '{discr_method}'")
+            raise NotImplementedError(f"There is no LLAMA discretization method called '{discr_method}'")
 
         # add one to get the final alpha values right (the ones from first scale to data during sampling)
         time_step_seq = time_step_seq + 1

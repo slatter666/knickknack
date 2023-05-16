@@ -60,7 +60,7 @@ def sample(ck_path, sample_steps=100, eta=0, discr_method='linear'):
     """
     :param ck_path: checkpoint path
     :param sample_steps: reverse steps
-    :param eta: 0.0 for DDIM and 1.0 for DDPM
+    :param eta: 0.0 for LLAMA and 1.0 for DDPM
     :param discr_method: linear or quadratic
     """
     image_save_path = f'gen/sample_steps={sample_steps}_eta={eta}.png'
@@ -120,7 +120,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(prog="ResNet Running Program")
     parser.add_argument('--mode', default='test', type=str, choices=['train', 'test'], help='choose train or test')
     parser.add_argument('--steps', type=int, default=100, help='choose how many sample steps')
-    parser.add_argument('--eta', default=0.0, type=float, help='set eta, 0.0 for DDIM and 1.0 for DDPM')
+    parser.add_argument('--eta', default=0.0, type=float, help='set eta, 0.0 for LLAMA and 1.0 for DDPM')
 
     args = parser.parse_args()
     if args.mode == 'train':
