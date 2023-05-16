@@ -42,9 +42,6 @@ class DiffusionModel(pl.LightningModule):
         self.posterior_variance = self.betas * (1. - self.alphas_cumprod_prev) / (
                     1. - self.alphas_cumprod)  # second posterior variance setting
 
-        # this will be used when we use LLAMA generate process
-        self.time_step_sequence = None
-
         # used for test
         self.check_every = 20  # check the quality of generated image every 20 epochs
         self.test_to_device = False
