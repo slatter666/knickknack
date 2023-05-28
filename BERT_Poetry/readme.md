@@ -44,7 +44,11 @@ model = BertModel.from_pretrained("bert-base-chinese")
 ```
 - 支持设置`temperature`和`top_p`，执行`python run.py --mode test --category acrostic --head 只因太美 --temperature 0.7 --top-p 0.8`
 ```text
+# 这里放两条示例
+
 只因诸葛太平年，因得仙经与世传。太守不知天下事，美哉何似此中仙。
+
+只道西湖好，因君得此行。太湖云外出，美景月中生。
 ```
 
 #### 4. 参考
