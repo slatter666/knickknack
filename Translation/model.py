@@ -144,7 +144,7 @@ class NMT(pl.LightningModule):
 
     def validation_epoch_end(self, step_output):
         loss = sum(step_output) / len(step_output)
-        self.log('val loss', loss, sync_dist=True)
+        self.log('val_loss', loss, sync_dist=True)
         print('Valid loss: {:.3f}'.format(loss))
 
     def greedy_decode(self, src: List[str], max_len: int = 128, device=torch.device('cpu')):

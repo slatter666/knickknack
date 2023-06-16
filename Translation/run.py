@@ -94,9 +94,9 @@ def train():
     # training
     checkpoint_path = os.path.join(save_dir, f'lr={lr}-batch={batch_size}')
     checkpoint_callback = ModelCheckpoint(
-        monitor='val loss',
+        monitor='val_loss',
         dirpath=checkpoint_path,
-        filename='{epoch}-{val loss:.3f}',
+        filename='{epoch}-{val_loss:.3f}',
         save_weights_only=True,
         save_top_k=5,
         mode='min'
@@ -131,7 +131,7 @@ if __name__ == '__main__':
     if args.mode == 'train':
         train()
     else:
-        ck_path = 'checkpoints/lr=0.0002-batch=150/epoch=29-val loss=2.584.ckpt'
+        ck_path = 'checkpoints/lr=0.0002-batch=150/epoch=29-val_loss=2.584.ckpt'
 
         en = ["I want to train a neural machine translation model",
               "print this paper and send it to Bob",
