@@ -20,5 +20,6 @@ There are mainly four kinds of projects, all of them are written using pytorch l
 - [use BERT to generate Chinese Poetry](BERT_Poetry)
 
 ### 3. Text to Image
+- On development~
 
 ### 4. Image to Text
