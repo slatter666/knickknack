@@ -16,6 +16,7 @@ There are mainly four kinds of projects, all of them are written using pytorch l
 - [use DDIM to generate anime faces](DDIM_ANIME)
 
 ### 2. Generating Text
+- [En-Zh Transformer Seq2Seq Translation](Translation)
 - [use BERT to generate Chinese Poetry](BERT_Poetry)
 
 ### 3. Text to Image
