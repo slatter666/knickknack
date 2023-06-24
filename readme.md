@@ -18,7 +18,7 @@ There are mainly four kinds of projects, all of them are written using pytorch l
 ### 2. Generating Text
 - [En-Zh Transformer Seq2Seq Translation](Translation)
 - [use BERT to generate Chinese Poetry](BERT_Poetry)
-- [Language Model base on GPT-2 Architecture]()
+- [Pretrained Language Model based on GPT-2 Architecture](GPTMini)
 
 ### 3. Text to Image
 
